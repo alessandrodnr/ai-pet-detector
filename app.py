@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory, url_for
 import os
-from werkzeug.utils import secure_filename
+from werkzeug.utils import secure_filename, quote  # Actualiza la importación aquí
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import load_model
 import numpy as np
@@ -98,4 +98,3 @@ def predict():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
-
